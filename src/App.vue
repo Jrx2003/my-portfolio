@@ -36,6 +36,16 @@ const toggleTheme = () => {
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value
 }
+
+// 菜单项中英文映射
+const menuItems = [
+  { path: '', label: '首页' },
+  { path: 'skills', label: '技能' },
+  { path: 'resume', label: '简历' },
+  { path: 'photos', label: '摄影' },
+  { path: 'anime', label: '动漫' },
+  { path: 'blog', label: '博客' }
+]
 </script>
 
 <template>
@@ -47,18 +57,18 @@ const toggleMenu = () => {
     >
       <div class="container mx-auto flex justify-between items-center">
         <!-- Logo -->
-        <router-link to="/" class="font-bold text-2xl text-primary-500">Portfolio</router-link>
+        <router-link to="/" class="font-bold text-2xl text-primary-500">个人主页</router-link>
         
         <!-- Desktop Menu -->
         <div class="hidden md:flex space-x-8">
-          <router-link v-for="link in ['', 'skills', 'resume', 'photos', 'anime', 'blog']" 
-            :key="link" 
-            :to="`/${link}`" 
+          <router-link v-for="item in menuItems" 
+            :key="item.path" 
+            :to="`/${item.path}`" 
             class="py-2 relative"
-            :class="{'text-primary-500 font-medium': $route.path === `/${link}`}"
+            :class="{'text-primary-500 font-medium': $route.path === `/${item.path}`}"
           >
-            {{ link ? link.charAt(0).toUpperCase() + link.slice(1) : 'Home' }}
-            <span v-if="$route.path === `/${link}`" class="absolute bottom-0 left-0 w-full h-0.5 bg-primary-500"></span>
+            {{ item.label }}
+            <span v-if="$route.path === `/${item.path}`" class="absolute bottom-0 left-0 w-full h-0.5 bg-primary-500"></span>
           </router-link>
         </div>
         
@@ -89,14 +99,14 @@ const toggleMenu = () => {
       >
         <div class="container mx-auto space-y-2">
           <router-link 
-            v-for="link in ['', 'skills', 'resume', 'photos', 'anime', 'blog']" 
-            :key="link" 
-            :to="`/${link}`" 
+            v-for="item in menuItems" 
+            :key="item.path" 
+            :to="`/${item.path}`" 
             class="block py-2 px-4 rounded-lg"
-            :class="{'bg-primary-500/10 text-primary-500': $route.path === `/${link}`}"
+            :class="{'bg-primary-500/10 text-primary-500': $route.path === `/${item.path}`}"
             @click="isMenuOpen = false"
           >
-            {{ link ? link.charAt(0).toUpperCase() + link.slice(1) : 'Home' }}
+            {{ item.label }}
           </router-link>
         </div>
       </div>
@@ -116,7 +126,7 @@ const toggleMenu = () => {
       <div class="container mx-auto px-6">
         <div class="flex flex-col md:flex-row justify-between items-center">
           <div class="mb-6 md:mb-0">
-            <p class="text-gray-700 dark:text-gray-300">�0�8 2025 Personal Portfolio</p>
+            <p class="text-gray-700 dark:text-gray-300">© 2025 个人作品集</p>
           </div>
           <div class="flex space-x-6">
             <!-- GitHub -->

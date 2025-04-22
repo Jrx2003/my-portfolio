@@ -3,8 +3,8 @@ import { ref, onMounted } from 'vue'
 import BaseLayout from '../layouts/BaseLayout.vue'
 import skillsData from '../data/skills.json'
 
-const categories = ['Languages', 'Frameworks', 'Tools']
-const activeCategory = ref('Languages')
+const categories = ['编程语言', '框架', '工具']
+const activeCategory = ref('编程语言')
 const filteredSkills = ref([])
 
 const setActiveCategory = (category) => {
@@ -13,8 +13,15 @@ const setActiveCategory = (category) => {
 }
 
 const filterSkills = () => {
+  // 将英文类别映射为中文
+  const categoryMap = {
+    '编程语言': 'Languages',
+    '框架': 'Frameworks',
+    '工具': 'Tools'
+  }
+  
   filteredSkills.value = skillsData.filter(skill => 
-    skill.category === activeCategory.value
+    skill.category === categoryMap[activeCategory.value]
   )
 }
 
@@ -25,7 +32,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <BaseLayout title="Skills" subtitle="Technologies I work with">
+  <BaseLayout title="技能" subtitle="我使用的技术栈">
     <!-- Category tabs -->
     <div class="flex flex-wrap justify-center mb-12 border-b dark:border-gray-700">
       <button 
@@ -66,10 +73,10 @@ onMounted(() => {
     
     <!-- Empty state -->
     <div v-if="filteredSkills.length === 0" class="text-center py-12">
-      <p class="text-gray-600 dark:text-gray-400">No skills found in this category. Time to learn something new!</p>
+      <p class="text-gray-600 dark:text-gray-400">该分类下暂无技能。是时候学习新东西了！</p>
     </div>
     
-    <!-- TODO: Add your skills in src/data/skills.json -->
+    <!-- TODO: 在 src/data/skills.json 中添加你的技能 -->
   </BaseLayout>
 </template>
 

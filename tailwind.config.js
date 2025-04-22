@@ -10,6 +10,7 @@ export default {
       animation: {
         'typewriter': 'typewriter 4s steps(40) infinite',
         'blink': 'blink 1s infinite',
+        'float': 'float 6s ease-in-out infinite',
       },
       keyframes: {
         typewriter: {
@@ -19,6 +20,10 @@ export default {
         blink: {
           '0%, 100%': { opacity: '1' },
           '50%': { opacity: '0' },
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-25px)' },
         },
       },
       colors: {

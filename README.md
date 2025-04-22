@@ -4,16 +4,16 @@ A modern portfolio website built with Vue 3, Vite, Tailwind CSS, and GSAP animat
 
 ## Features
 
-- ”9À6 Responsive design with mobile-first approach
-- ”9±7 Dark/light mode toggle with localStorage persistence
-- ”9ã4 Animated page transitions using GSAP
-- •0á8 Vue 3 Composition API for state management
-- ”9ß5 Markdown blog with frontmatter support
-- ”9á5 Mobile-friendly navigation with animated hamburger menu
-- ”9Ý6 Skills visualization with category filtering
-- ”9Ý0 Interactive resume timeline with print styles
-- ”9õ8„1‚5 Photography gallery with masonry layout and lightbox
-- ”9â4 AniList integration for tracking anime
+- ï¿½9ï¿½6 Responsive design with mobile-first approach
+- ï¿½9ï¿½7 Dark/light mode toggle with localStorage persistence
+- ï¿½9ï¿½4 Animated page transitions using GSAP
+- ï¿½0ï¿½8 Vue 3 Composition API for state management
+- ï¿½9ï¿½5 Markdown blog with frontmatter support
+- ï¿½9ï¿½5 Mobile-friendly navigation with animated hamburger menu
+- ï¿½9ï¿½6 Skills visualization with category filtering
+- ï¿½9ï¿½0 Interactive resume timeline with print styles
+- ï¿½9ï¿½8ï¿½1ï¿½5 Photography gallery with masonry layout and lightbox
+- ï¿½9ï¿½4 AniList integration for tracking anime
 
 ## Setup
 
@@ -79,24 +79,24 @@ npm run deploy
 - **Styling**: Modify `tailwind.config.js` to update theme colors
 - **Blog posts**: Add markdown files to `src/data/posts/`
 - **Photos**: Update `src/data/photos.json` with your image links
-- **Resume**: Modify `src/data/resume.yaml` with your experience
+- **Resume**: Modify `src/data/resume.json` with your experience
 
 ## Project Structure
 
 ```
 src/
- ©À©¤ assets/               # Images, icons, fonts
- ©À©¤ components/           # Reusable UI components
- ©À©¤ layouts/              # Base and Blog layouts
- ©À©¤ pages/                # Route pages
- ©À©¤ data/                 # Content data files
- ©¦   ©À©¤ skills.json       # Skills with categories and levels
- ©¦   ©À©¤ resume.yaml       # Resume data
- ©¦   ©À©¤ photos.json       # Photography gallery images
- ©¦   ©¸©¤ posts/            # Markdown blog posts
- ©À©¤ router/               # Vue Router configuration
- ©À©¤ App.vue               # Main app component with navigation
- ©¸©¤ main.ts               # App entry point
+ ï¿½ï¿½ï¿½ï¿½ assets/               # Images, icons, fonts
+ ï¿½ï¿½ï¿½ï¿½ components/           # Reusable UI components
+ ï¿½ï¿½ï¿½ï¿½ layouts/              # Base and Blog layouts
+ ï¿½ï¿½ï¿½ï¿½ pages/                # Route pages
+ ï¿½ï¿½ï¿½ï¿½ data/                 # Content data files
+ ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ skills.json       # Skills with categories and levels
+ ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ resume.json       # Resume data
+     photos.json       # Photography gallery images
+ ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ posts/            # Markdown blog posts
+ ï¿½ï¿½ï¿½ï¿½ router/               # Vue Router configuration
+ ï¿½ï¿½ï¿½ï¿½ App.vue               # Main app component with navigation
+ ï¿½ï¿½ï¿½ï¿½ main.ts               # App entry point
 ```
 
 ## License

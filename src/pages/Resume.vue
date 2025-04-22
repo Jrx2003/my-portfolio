@@ -1,94 +1,24 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import BaseLayout from '../layouts/BaseLayout.vue'
-import resumeData from '../data/resume.yaml'
+import resumeData from '../data/resume.json'
 
+const personal = ref({})
 const sections = ref([])
 
 onMounted(() => {
-  // In a real implementation, resume data would be loaded from the YAML file
-  // For this example, we'll use placeholder data
-  sections.value = [
-    {
-      title: 'Education',
-      items: [
-        {
-          title: 'Master of Computer Science',
-          organization: 'University of Technology',
-          location: 'San Francisco, CA',
-          date: '2023 - Present',
-          description: 'Specializing in artificial intelligence and machine learning. Current GPA: 3.9/4.0.'
-        },
-        {
-          title: 'Bachelor of Science in Computer Science',
-          organization: 'State University',
-          location: 'Los Angeles, CA',
-          date: '2019 - 2023',
-          description: 'Graduated with honors. Thesis on deep learning applications in computer vision. GPA: 3.8/4.0.'
-        }
-      ]
-    },
-    {
-      title: 'Experience',
-      items: [
-        {
-          title: 'Software Engineering Intern',
-          organization: 'Tech Solutions Inc.',
-          location: 'Remote',
-          date: 'Summer 2022',
-          description: 'Developed a web application using Vue.js and Node.js. Implemented RESTful APIs and optimized database queries.'
-        },
-        {
-          title: 'Research Assistant',
-          organization: 'AI Research Lab - State University',
-          location: 'Los Angeles, CA',
-          date: '2021 - 2023',
-          description: 'Assisted in developing machine learning models for image classification. Published two papers in international conferences.'
-        }
-      ]
-    },
-    {
-      title: 'Projects',
-      items: [
-        {
-          title: 'Neural Network Visualization Tool',
-          date: '2022',
-          description: 'A web-based tool that visualizes neural network architectures and training processes in real-time.'
-        },
-        {
-          title: 'Smart Campus Navigation App',
-          date: '2021',
-          description: 'A mobile application that helps students navigate campus efficiently using indoor positioning systems.'
-        }
-      ]
-    },
-    {
-      title: 'Awards',
-      items: [
-        {
-          title: 'Dean\'s List',
-          organization: 'State University',
-          date: '2020 - 2023',
-          description: 'Recognized for academic excellence for 6 consecutive semesters.'
-        },
-        {
-          title: 'Hackathon Winner',
-          organization: 'Tech Innovators Conference',
-          date: '2022',
-          description: 'First place in the annual hackathon with a project on sustainable energy management.'
-        }
-      ]
-    }
-  ]
+  // 从JSON文件加载简历数据
+  personal.value = resumeData.personal
+  sections.value = resumeData.sections
 })
 </script>
 
 <template>
-  <BaseLayout title="Resume" subtitle="My professional journey">
+  <BaseLayout title="简历" subtitle="我的职业旅程">
     <div class="mb-6 flex justify-between items-center">
       <div>
         <p class="text-gray-600 dark:text-gray-400">
-          Last updated: April 2025
+          最后更新: 2025年4月
         </p>
       </div>
       <a 
@@ -99,7 +29,7 @@ onMounted(() => {
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
         </svg>
-        Download PDF
+        下载PDF
       </a>
     </div>
     
@@ -132,7 +62,7 @@ onMounted(() => {
               <div v-if="item.organization" class="mb-2">
                 <div class="flex items-center text-gray-700 dark:text-gray-300">
                   <span>{{ item.organization }}</span>
-                  <span v-if="item.location" class="mx-2">�6�1</span>
+                  <span v-if="item.location" class="mx-2">·</span>
                   <span v-if="item.location">{{ item.location }}</span>
                 </div>
               </div>
@@ -144,7 +74,7 @@ onMounted(() => {
       </section>
     </div>
     
-    <!-- TODO: Add your resume data in src/data/resume.yaml -->
+    <!-- TODO: 在 src/data/resume.json 中添加你的简历数据 -->
   </BaseLayout>
 </template>
 

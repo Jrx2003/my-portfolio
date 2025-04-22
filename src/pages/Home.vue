@@ -7,7 +7,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 // Typewriter effect state
-const roles = ['CS Student', 'Data Scientist', 'Photographer']
+const roles = ['计算机科学学生', '数据科学家', '摄影师']
 const currentRoleIndex = ref(0)
 const currentRole = ref(roles[0])
 const isCardFlipped = ref(false)
@@ -87,7 +87,7 @@ const toggleCardFlip = () => {
       
       <!-- Content -->
       <div class="container mx-auto px-4 z-10 text-center">
-        <h1 class="text-5xl md:text-7xl font-bold text-gray-800 dark:text-white mb-4">John Doe</h1>
+        <h1 class="text-5xl md:text-7xl font-bold text-gray-800 dark:text-white mb-4">张三</h1>
         <div class="h-8 relative overflow-hidden">
           <div class="flex items-center justify-center h-full">
             <span class="text-xl md:text-2xl font-medium text-primary-600 dark:text-primary-400">
@@ -109,7 +109,7 @@ const toggleCardFlip = () => {
     <!-- About Me section with flip card -->
     <section id="about" class="py-20 bg-gray-50 dark:bg-gray-800">
       <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-16 text-gray-800 dark:text-white">About Me</h2>
+        <h2 class="text-3xl font-bold text-center mb-16 text-gray-800 dark:text-white">关于我</h2>
         
         <div class="flex justify-center">
           <div 
@@ -122,19 +122,19 @@ const toggleCardFlip = () => {
             >
               <!-- Front of card -->
               <div class="absolute inset-0 glass-card p-6 flex flex-col justify-center items-center backface-hidden">
-                <img src="/placeholder-profile.jpg" alt="Profile" class="w-24 h-24 rounded-full mb-4">
-                <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-2">John Doe</h3>
-                <p class="text-gray-600 dark:text-gray-300 text-center">Computer Science Student at University of Technology</p>
-                <p class="mt-4 text-sm text-primary-600 dark:text-primary-400">Click to learn more</p>
+                <img src="/vite.svg" alt="个人头像" class="w-24 h-24 rounded-full mb-4">
+                <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-2">张三</h3>
+                <p class="text-gray-600 dark:text-gray-300 text-center">某理工大学计算机科学专业学生</p>
+                <p class="mt-4 text-sm text-primary-600 dark:text-primary-400">点击了解更多</p>
               </div>
               
               <!-- Back of card -->
               <div class="absolute inset-0 glass-card p-6 flex flex-col justify-center rotate-y-180 backface-hidden">
-                <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-4">My Journey</h3>
+                <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-4">我的旅程</h3>
                 <p class="text-gray-600 dark:text-gray-300 text-sm">
-                  I'm a passionate computer science student with a love for data science, web development, and photography. When I'm not coding, you can find me exploring the world through my camera lens.
+                  我是一名热爱数据科学、网页开发和摄影的计算机科学专业学生。当我不在编程时，你可以发现我正通过相机镜头探索这个世界。
                 </p>
-                <p class="mt-4 text-sm text-primary-600 dark:text-primary-400">Click to flip back</p>
+                <p class="mt-4 text-sm text-primary-600 dark:text-primary-400">点击返回</p>
               </div>
             </div>
           </div>
@@ -145,7 +145,7 @@ const toggleCardFlip = () => {
     <!-- Skills Preview Section -->
     <section class="py-16 skills-section">
       <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-10 text-gray-800 dark:text-white">My Skills</h2>
+        <h2 class="text-3xl font-bold text-center mb-10 text-gray-800 dark:text-white">我的技能</h2>
         
         <div class="flex flex-wrap justify-center gap-4">
           <div v-for="skill in ['JavaScript', 'Vue', 'React', 'Python', 'TensorFlow']" :key="skill" 
@@ -157,7 +157,7 @@ const toggleCardFlip = () => {
         
         <div class="mt-8 text-center">
           <router-link to="/skills" class="text-primary-600 dark:text-primary-400 hover:underline font-medium">
-            See all my skills ��
+            查看我的所有技能 →
           </router-link>
         </div>
       </div>
@@ -166,16 +166,16 @@ const toggleCardFlip = () => {
     <!-- Latest Blog Post Preview -->
     <section class="py-16 bg-gray-50 dark:bg-gray-800 blog-preview">
       <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-10 text-gray-800 dark:text-white">Latest Blog Post</h2>
+        <h2 class="text-3xl font-bold text-center mb-10 text-gray-800 dark:text-white">最新博客文章</h2>
         
         <div class="max-w-2xl mx-auto glass-card p-6">
-          <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Getting Started with Vue 3 Composition API</h3>
-          <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">April 15, 2025 �6�1 5 min read</p>
+          <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Vue 3 Composition API 入门指南</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">2025年4月15日 · 阅读时间：5分钟</p>
           <p class="text-gray-700 dark:text-gray-300 mb-6">
-            Learn how the Vue 3 Composition API helps organize your component logic and improve code reusability compared to the Options API...
+            了解Vue 3 Composition API如何帮助组织组件逻辑并提高代码重用性，相比Options API有哪些优势...
           </p>
           <router-link to="/blog/getting-started-with-vue-3-composition-api" class="text-primary-600 dark:text-primary-400 font-medium">
-            Read more ��
+            阅读更多 →
           </router-link>
         </div>
       </div>
@@ -184,7 +184,7 @@ const toggleCardFlip = () => {
     <!-- CTA Buttons -->
     <section class="py-20 cta-buttons">
       <div class="container mx-auto px-4 text-center">
-        <h2 class="text-3xl font-bold mb-10 text-gray-800 dark:text-white">Let's Connect</h2>
+        <h2 class="text-3xl font-bold mb-10 text-gray-800 dark:text-white">联系我</h2>
         
         <div class="flex flex-wrap justify-center gap-4">
           <a 
@@ -193,19 +193,19 @@ const toggleCardFlip = () => {
             rel="noopener noreferrer"
             class="px-6 py-3 bg-primary-500 hover:bg-primary-600 text-white rounded-lg transition-all duration-300 shadow-md hover:shadow-lg"
           >
-            GitHub Projects
+            GitHub 项目
           </a>
           <router-link 
             to="/resume" 
             class="px-6 py-3 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-800 dark:text-white rounded-lg transition-all duration-300 shadow-md hover:shadow-lg"
           >
-            View Resume
+            查看简历
           </router-link>
           <a 
             href="mailto:your.email@example.com" 
             class="px-6 py-3 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-800 dark:text-white rounded-lg transition-all duration-300 shadow-md hover:shadow-lg"
           >
-            Contact Me
+            联系我
           </a>
         </div>
       </div>
